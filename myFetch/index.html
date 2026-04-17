@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Domain Checker | ตรวจสอบชื่อโดเมน</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+    <div class="page-wrapper">
+        <header class="header">
+            <div class="logo">Domain<span>Checker</span></div>
+            <p class="subtitle">ตรวจสอบอย่างรวดเร็วว่าโดเมนของคุณมีคนใช้แล้วหรือยัง</p>
+        </header>
+
+        <main class="main">
+            <section class="card">
+                <h1>ตรวจสอบชื่อโดเมน</h1>
+                <p class="description">
+                    กรอกชื่อโดเมนที่ต้องการตรวจสอบ เช่น <strong>mycooldomain.com</strong>
+                </p>
+
+                <form id="domain-form" class="form">
+                    <div class="form-group">
+                        <label for="domain-input">ชื่อโดเมน</label>
+                        <div class="input-row">
+                            <input type="text" id="domain-input" placeholder="เช่น example.com" autocomplete="off" />
+                            <button type="submit" id="check-btn">ตรวจสอบ</button>
+                        </div>
+                        <small class="hint">
+                            ไม่ต้องใส่ http:// หรือ https:// แค่ชื่อโดเมนเท่านั้น
+                        </small>
+                    </div>
+                </form>
+
+                <div id="status" class="status"></div>
+
+                <div id="result" class="result hidden">
+                    <div id="badge" class="badge"></div>
+                    <h2 id="result-title"></h2>
+                    <p id="result-message"></p>
+
+                    <!-- ปุ่มไปสมัครโดเมน -->
+                    <button id="register-btn" class="hidden">
+                        ไปหน้าสมัครโดเมน
+                    </button>
+
+                    <!-- ข้อความนับถอยหลัง -->
+                    <p id="countdown-text" class="hidden"></p>
+
+                    <pre id="raw-data" class="raw-data hidden"></pre>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <p>Powered by <span>API Ninjas</span> • ตัวอย่างโดยคุณ</p>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>

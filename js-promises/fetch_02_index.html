@@ -1,0 +1,42 @@
+<!-- HTML -->
+<div id="status" style="font-weight: bold;">สถานะ: รอการตรวจสอบ...</div>
+<div id="ip-display">IP: -</div>
+<div id="error-message" style="color: red;"></div>
+
+<script>
+    const url = "https://api.api-ninjas.com/v1/iplookup?address=73.9.149.180";
+    const options = {
+        method: "GET",
+        headers: {
+            "X-Api-Key": "4O8kEXCry14w0QfwCUaDdn2cZSRTMysppTgpsl2l",
+            "Content-Type": "application/json",   // แก้ให้ถูก
+        },
+    };
+
+    fetch(url, options)
+        .then((response) => response.json())
+        .then((data) => {
+            console.log(data);
+
+            // สมมติว่า API คืนค่า field ชื่อ ip กลับมา เช่น { ip: "73.9.149.180", ... }
+            const ip = data.address || "ไม่พบข้อมูล IP";
+
+            // อ้างอิง element ในหน้าเว็บ
+            const statusEl = document.getElementById("status");
+            const ipEl = document.getElementById("ip-display");
+
+            // ตั้งค่าข้อความและสีสถานะ (เขียว)
+            statusEl.textContent = "สถานะ: ทำงาน";
+            statusEl.style.color = "green";
+
+            // แสดง IP
+            ipEl.textContent = "IP: " + ip;
+        })
+        .catch((error) => {
+            console.error("Error:", error);
+
+            const statusEl = document.getElementById("status");
+            statusEl.textContent = "สถานะ: มีข้อผิดพลาด";
+            statusEl.style.color = "red";
+        });
+</script>

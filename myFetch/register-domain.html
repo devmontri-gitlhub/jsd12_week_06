@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>สมัครโดเมน | Domain Registration</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="register-domain.css" />
+</head>
+
+<body>
+    <div class="page-wrapper">
+        <header class="header">
+            <div class="logo">Domain<span>Register</span></div>
+            <p class="subtitle">
+                เลือกแพ็กเกจและกรอกข้อมูลสำหรับจดโดเมนใหม่ของคุณ
+            </p>
+        </header>
+
+        <main class="main">
+            <section class="card">
+                <h1>สมัครโดเมนใหม่</h1>
+                <p class="description">
+                    ตรวจสอบชื่อโดเมนด้านล่าง แก้ไขได้ถ้าต้องการ จากนั้นเลือกระยะเวลาและกรอกข้อมูลการติดต่อ
+                </p>
+
+                <!-- แสดงชื่อโดเมนที่ส่งมาจากหน้าเช็คโดเมน -->
+                <div class="domain-box">
+                    <label for="domain-input">ชื่อโดเมนที่ต้องการจดทะเบียน</label>
+                    <input type="text" id="domain-input" placeholder="เช่น mycooldomain.com" autocomplete="off" />
+                    <small class="hint">
+                        ระบบจะพยายามนำชื่อโดเมนจากหน้าก่อนหน้า (ถ้ามี) มาใส่ให้โดยอัตโนมัติ
+                    </small>
+                </div>
+
+                <!-- เลือกระยะเวลา / แพ็กเกจ -->
+                <form id="register-form" class="form">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="duration">ระยะเวลา</label>
+                            <select id="duration">
+                                <option value="1">1 ปี</option>
+                                <option value="2">2 ปี</option>
+                                <option value="3">3 ปี</option>
+                                <option value="5">5 ปี</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="tld">ประเภทโดเมน (TLD)</label>
+                            <select id="tld">
+                                <option value=".com">.com</option>
+                                <option value=".net">.net</option>
+                                <option value=".org">.org</option>
+                                <option value=".co.th">.co.th</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- ข้อมูลผู้จดทะเบียน (จำลอง) -->
+                    <div class="form-group">
+                        <label for="full-name">ชื่อ–นามสกุล ผู้ขอจดโดเมน</label>
+                        <input type="text" id="full-name" placeholder="เช่น สมชาย ใจดี" autocomplete="off" />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">อีเมลติดต่อ</label>
+                        <input type="email" id="email" placeholder="you@example.com" autocomplete="off" />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">เบอร์ติดต่อ</label>
+                        <input type="tel" id="phone" placeholder="เช่น 0812345678" autocomplete="off" />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="notes">หมายเหตุเพิ่มเติม (ถ้ามี)</label>
+                        <textarea id="notes" rows="3"
+                            placeholder="ระบุความต้องการเพิ่มเติม เช่น ต้องการ hosting, email ฯลฯ"></textarea>
+                    </div>
+
+                    <div class="summary" id="summary-box">
+                        <h2>สรุปรายละเอียด</h2>
+                        <p><span>โดเมน:</span> <span id="summary-domain">-</span></p>
+                        <p>
+                            <span>ระยะเวลา:</span> <span id="summary-duration">-</span>
+                        </p>
+                        <p>
+                            <span>ราคาโดยประมาณ:</span>
+                            <span id="summary-price">-</span>
+                        </p>
+                    </div>
+
+                    <button type="submit" id="submit-btn">ยืนยันการสมัครโดเมน</button>
+                </form>
+
+                <p id="status" class="status"></p>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <p>หน้านี้เป็นตัวอย่างหน้าแบบฟอร์มสมัครโดเมน (Demo)</p>
+        </footer>
+    </div>
+
+    <script src="register-domain.js"></script>
+</body>
+
+</html>
